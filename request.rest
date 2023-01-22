@@ -1,0 +1,40 @@
+GET http://localhost:5000/books
+
+###
+GET http://localhost:5000/books/63ccd74e6723cf3ef2589c46
+
+###
+POST http://localhost:5000/books
+Content-Type: application/json
+
+{
+    "name": "The Lord of the Rings",
+    "year": 1954,
+    "author": "J. R. R. Tolkien",
+    "summary": "The Lord of the Rings is an epic high fantasy",
+    "publisher": "Allen & Unwin",
+    "pageCount": 1216,
+    "readPage": 1216,
+    "reading": false
+}
+
+###
+PUT http://localhost:5000/books/63ccd74e6723cf3ef2589c46
+Content-Type: application/json
+
+{
+    "name": "The Lord of the Rings UPDATED",
+    "year": 1954,
+    "author": "J. R. R. Tolkien",
+    "summary": "The Lord of the Rings is an epic high fantasy",
+    "publisher": "Allen & Unwin",
+    "pageCount": 1216,
+    "readPage": 1216,
+    "reading": false
+}
+
+###
+DELETE http://localhost:5000/books/63ccd74e6723cf3ef2589c46
+
+###
+POST http://localhost:5000/register

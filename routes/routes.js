@@ -1,18 +1,19 @@
 import express from 'express';
+import auth from './verifyToken.js';
 import {
   addBook,
-  editBookById,
   getAllBooks,
   getBookById,
+  editBookById,
   deleteBookById,
 } from '../controllers/BookController.js';
 
 const router = express.Router();
 
-router.post('/books', addBook);
 router.get('/books', getAllBooks);
-router.get('/books/:bookId', getBookById);
-router.put('/books/:bookId', editBookById);
-router.delete('/books/:bookId', deleteBookById);
+router.get('/books/:id', getBookById);
+router.post('/books', auth, addBook);
+router.put('/books/:id', auth, editBookById);
+router.delete('/books/:id', auth, deleteBookById);
 
 export default router;
